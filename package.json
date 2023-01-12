@@ -1,9 +1,10 @@
 {
-  "name": "calculator",
+  "name": "to-do-list",
   "version": "1.0.0",
   "description": "",
-  "main": "calculator.js",
+  "main": "app.js",
   "scripts": {
+    "start":"node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "adarsh",
