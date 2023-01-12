@@ -19,7 +19,7 @@ passport.deserializeUser(function (id, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://pear-brainy-crane.cyclic.app/login/google/callback"
+  callbackURL: "https://good-gold-caterpillar-tutu.cyclic.app/login/google/callback"
 },
 function(accessToken, refreshToken, profile, cb) {
   User.findOne({ emailId: profile._json.email })
