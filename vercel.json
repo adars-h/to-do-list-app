@@ -4,7 +4,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "destination": "app.js"
+      "dest": "app.js"
     }
   ]
 }
