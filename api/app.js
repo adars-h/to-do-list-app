@@ -18,7 +18,7 @@ mongoose.connect(process.env.CONN,{
 	app.set("view engine","ejs");
 // configuring middleware functions.
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static"../public"));
+app.use(express.static("../public"));
 app.use(cookieSession({
 	keys: [process.env.SECRET],
 	maxAge: 24*60*60*1000
