@@ -34,4 +34,4 @@ app.listen(process.env.PORT || 3000,function(){
 });
 
 
-// setting the ejs template engine.
+module.exports = app;
