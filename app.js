@@ -27,11 +27,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(login);
 app.use("/",checkAllowance,router);
-app.listen(process.env.PORT || 3000,function(){
-});
-}).catch((err) => {
-	console.log(err);
-});
+// app.listen(process.env.PORT || 3000,function(){
+// });
+// }).catch((err) => {
+// 	console.log(err);
+// });
 
 
 module.exports = app;
