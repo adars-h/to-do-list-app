@@ -1,5 +1,4 @@
 const { connectDB } = require('../api/index.js');
-await connectDB();
 const express = require('express');
 const passport = require('passport');
 const User = require('../models/user.js');
@@ -9,7 +8,8 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.serializeUser(function (user, cb) {
   cb(null, user.id);
 });
-passport.deserializeUser(function (id, cb) {
+async passport.deserializeUser(function (id, cb) {
+  await connectDB();
   User.findById(id, function (err, user) {
     if (err) {
       return cb(err);
@@ -23,7 +23,8 @@ passport.use(new GoogleStrategy({
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: process.env.CALLBACK_URL
 },
-function(accessToken, refreshToken, profile, cb) {
+async function(accessToken, refreshToken, profile, cb) {
+  await connectDB();
   User.findOne({ emailId: profile._json.email })
   .then((user)=>{
         if(!user) {
