@@ -1,10 +1,10 @@
+const { connectDB } = require('../api/index.js');
+await connectDB();
 const express = require('express');
 const passport = require('passport');
 const User = require('../models/user.js');
 const login = express.Router();
-const { connectDB } = require('../api/index.js');
 require("dotenv").config();
-await connectDB();
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.serializeUser(function (user, cb) {
   cb(null, user.id);
