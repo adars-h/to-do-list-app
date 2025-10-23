@@ -8,7 +8,7 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.serializeUser(function (user, cb) {
   cb(null, user.id);
 });
-async passport.deserializeUser(function (id, cb) {
+passport.deserializeUser(async function (id, cb) {
   await connectDB();
   User.findById(id, function (err, user) {
     if (err) {
