@@ -21,7 +21,10 @@ async function connectDB() {
   }
 }
 
-module.exports = async (req, res) => {
+module.exports = {
+  handler: async (req, res) => {
   await connectDB();
   return app(req, res);
+}
+,connectDB
 };
