@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 require("dotenv").config();
 const router = require("../routes/route.js");
 const login =  require("../routes/login.js");
-const checkAllowance = require("./middleware/Auth/checkAllowance.js");
+const checkAllowance = require("../middleware/Auth/checkAllowance.js");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 // Initializes the express application.
