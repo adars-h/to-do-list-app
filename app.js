@@ -9,13 +9,7 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 // Initializes the express application.
 const app = express();
-// connecting to database
-mongoose.connect(process.env.CONN,{
-	useNewUrlParser:true,
-	useUnifiedTopology:true
-}).then(() => {
-	 console.log("success");
-	app.set("view engine","ejs");
+app.set("view engine","ejs");
 // configuring middleware functions.
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
@@ -27,11 +21,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(login);
 app.use("/",checkAllowance,router);
-app.listen(process.env.PORT || 3000,function(){
-});
-}).catch((err) => {
-	console.log(err);
-});
 
 
 module.exports = app;
