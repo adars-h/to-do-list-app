@@ -6,7 +6,6 @@ const login =  require("./routes/login.js");
 const checkAllowance = require("./middleware/Auth/checkAllowance.js");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
-const { connectDB } = require("./api/index.js")
 // Initializes the express application.
 const app = express();
 app.set("view engine","ejs");
