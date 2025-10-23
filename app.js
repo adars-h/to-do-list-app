@@ -26,7 +26,7 @@ async function connectDB() {
 }
 app.use((req,res,next)=>{
 	if(!isConnected) {
-		connectDB():
+		connectDB();
 	}
 	next();
 });
